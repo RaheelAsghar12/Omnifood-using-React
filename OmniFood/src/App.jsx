@@ -1,12 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import "./App.css";
 
 function App() {
   return (
     <>
     
-      <header className="bg-dark text-white position-relative">
-        <nav className="navbar navbar-expand-lg navbar-dark container">
+      <header className="bg-light text-white position-relative">
+        <nav className="navbar navbar-expand-md navbar-dark container">
           <a className="navbar-brand" href="#">
             <img src="/download.png" alt="Omnifood Logo" height="100" />
           </a>
@@ -21,7 +23,7 @@ function App() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div className="collapse navbar-collapse justify-content-end text-end" id="navbarNav">
   <ul className="navbar-nav">
     <li className="nav-item">
       <a className="nav-link" href="#food-delivery">Food Delivery</a>
@@ -39,8 +41,8 @@ function App() {
 </div>
 
         </nav>
-        <div className="container text-center position-absolute top-50 start-50 translate-middle">
-          <h1 className="display-4 fw-bold">
+      <div className="container text-center text-md-center text-sm-start position-absolute top-50 start-50 start-sm-0 translate-middle translate-sm-0">
+           <h1 className="display-2 display-sm-3 fw-bold">
             Goodbye junk food.<br />
             Hello super healthy meals.
           </h1>
@@ -138,7 +140,7 @@ function App() {
           </div>
           <div className="col-md-6">
             {[1,2,3].map((step) => (
-              <div key={step} className="d-flex mb-4">
+              <div key={step} className="d-flex mb-4 ps-5">
                 <div className="bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" style={{width:'50px', height:'50px', fontWeight:'bold'}}>{step}</div>
                 <p className="mb-0">
                   {step === 1 && "Choose the subscription plan that best fits your needs and sign up today."}
@@ -147,7 +149,7 @@ function App() {
                 </p>
               </div>
             ))}
-            <div className="mt-3">
+            <div className="mt-3 ps-5">
               <a href="#"><img src="/download-app.png" alt="Apple" className="me-2" height="50"/></a>
               <a href="#"><img src="/download-app-android.png" alt="Android" height="50"/></a>
             </div>
@@ -160,15 +162,14 @@ function App() {
   <div className="container text-center mb-4">
     <h2>We're currently in these cities</h2>
   </div>
-  <div className="container row g-4 text-center">
-    {[
+<div className="container row g-4 text-center" style={{ paddingLeft: '100px' }}>    {[
       {name:'Lisbon', img:'lisbon-3.jpg', eaters:'1600+', chefs:'60+', twitter:'@omnifood_lx'},
       {name:'San Francisco', img:'san-francisco.jpg', eaters:'3700+', chefs:'160+', twitter:'@omnifood_sf'},
       {name:'Berlin', img:'berlin.jpg', eaters:'2300+', chefs:'110+', twitter:'@omnifood_berlin'},
       {name:'London', img:'london.jpg', eaters:'1200+', chefs:'50+', twitter:'@omnifood_london'}
     ].map((city, idx) => (
       <div key={idx} className="col-md-3">
-        <div className="city-img-container position-relative overflow-hidden rounded mb-2">
+        <div className="city-img-container position-relative overflow-hidden rounded  mb-2">
           <img src={`/${city.img}`} alt={city.name} className="img-fluid img-hover" />
           <div className="city-overlay d-flex align-items-center justify-content-center">
             <h5 className="text-white m-0">{city.name}</h5>
@@ -188,7 +189,7 @@ function App() {
         <div className="container text-center mb-4">
           <h2>Our customers can't live without us</h2>
         </div>
-        <div className="container row g-4">
+        <div className="container row g-4" style={{ paddingLeft: '100px' }}>
           {[
             {name:'Alberto Duncan', img:'customer-1.jpg', text:'Omnifood is just awesome! I just launched a startup…'},
             {name:'Joana Silva', img:'customer-2.jpg', text:'Inexpensive, healthy and great-tasting meals…'},
@@ -214,7 +215,7 @@ function App() {
         <div className="container text-center mb-4">
           <h2>Start eating healthy today</h2>
         </div>
-        <div className="container row g-4">
+        <div className="container row g-4" style={{ paddingLeft: '100px' }}>
           {[
             {plan:'Premium', price:'399$', perMeal:'13.30$', items:['1 meal every day','Order 24/7','Access to newest creations','Free delivery'], type:'full'},
             {plan:'Pro', price:'149$', perMeal:'14.90$', items:['1 meal 10 days/month','Order 24/7','Access to newest creations','Free delivery'], type:'ghost'},
@@ -269,7 +270,7 @@ function App() {
             <div className="mb-3">
               <textarea className="form-control" rows="4" placeholder="Your message"></textarea>
             </div>
-            <button type="submit" className="btn btn-warning">Send it!</button>
+            <button type="submit" className="btn btn-warning">Submit</button>
           </form>
         </div>
       </section>
@@ -280,7 +281,6 @@ function App() {
           <ul className="list-unstyled d-flex mb-2">
             <li className="me-3"><a href="#" className="text-warning text-decoration-none">About Us</a></li>
             <li className="me-3"><a href="#" className="text-warning text-decoration-none">Blog</a></li>
-            <li className="me-3"><a href="#" className="text-warning text-decoration-none">Press</a></li>
             <li className="me-3"><a href="#" className="text-warning text-decoration-none">iOS App</a></li>
             <li><a href="#" className="text-warning text-decoration-none">Android App</a></li>
           </ul>
